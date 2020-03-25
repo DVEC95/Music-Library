@@ -1,4 +1,4 @@
-require_relative('../db/sql_runner.rb')
+require_relative('../db/sql_runner')
 
 class Artist
 
@@ -11,7 +11,7 @@ class Artist
   end
 
   def save()
-    sql = "INSERT INTO artists
+    sql = 'INSERT INTO artists
     (
       name
     )
@@ -19,13 +19,13 @@ class Artist
     (
       $1
     )
-    RETURNING *"
+    RETURNING *'
     values = [@name]
     @id = SQLRunner.run(sql, values)[0]['id'].to_i
   end
 
   def self.all()
-    sql = "SELECT * FROM artists"
+    sql = 'SELECT * FROM artists'
     artists = SQLRunner.run(sql, [])
     return artists.map {|artist| Artist.new(artist)}
   end
