@@ -2,6 +2,7 @@ require('pry')
 require_relative('../models/artist')
 require_relative('../models/album')
 
+
 # ARTIST DATA ---------------
 artist1 = Artist.new({
   'name' => 'Radiohead'
