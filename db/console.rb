@@ -2,6 +2,8 @@ require('pry')
 require_relative('../models/artist')
 require_relative('../models/album')
 
+Album.delete_all()
+Artist.delete_all()
 
 # ARTIST DATA ---------------
 artist1 = Artist.new({
